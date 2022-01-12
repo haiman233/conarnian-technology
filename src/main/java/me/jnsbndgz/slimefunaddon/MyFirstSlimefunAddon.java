@@ -17,48 +17,23 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
-        // Read something from your config.yml
         Config cfg = new Config(this);
 
-        if (cfg.getBoolean("options.auto-update")) {
-            // You could start an Auto-Updater for example
-        }
+        NamespacedKey categoryId = new NamespacedKey(this, "barbarian_technology");
+        CustomItemStack categoryItem = new CustomItemStack(Material.LEATHER_CHESTPLATE, "&4Barbarian Technology");
 
-        /*
-         * 1. Creating a new Category
-         * This Category will use the following ItemStack
-         */
-        ItemStack itemGroupItem = new CustomItemStack(Material.DIAMOND, "&4Addon Category", "", "&a> Click to open");
+        ItemGroup itemGroup = new ItemGroup(categoryId, categoryItem);
+        SlimefunItemStack itemStack = new SlimefunItemStack("FIERY_AXE", Material.STONE_AXE, "&4Fiery Axe",
+                "", "&cTurns your opponent", "&con fire!");
+        ItemStack[] recipe = {
+                null,                                   new ItemStack(Material.BLAZE_POWDER),   null,
+                new ItemStack(Material.BLAZE_POWDER),   new ItemStack(Material.STONE_AXE),      new ItemStack(Material.BLAZE_POWDER),
+                null,                                   new ItemStack(Material.BLAZE_POWDER),   null
+        };
 
-        // Give your Category a unique id.
-        NamespacedKey itemGroupId = new NamespacedKey(this, "addon_category");
-        ItemGroup itemGroup = new ItemGroup(itemGroupId, itemGroupItem);
+        SlimefunItem sfItem = new SlimefunItem(itemGroup, itemStack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
 
-        /*
-         * 2. Create a new SlimefunItemStack
-         * This class has many constructors, it is very important
-         * that you give each item a unique id.
-         */
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("COOL_DIAMOND", Material.DIAMOND, "&4Cool Diamond", "&c+20% Coolness");
-
-        /*
-         * 3. Creating a Recipe
-         * The Recipe is an ItemStack Array with a length of 9.
-         * It represents a Shaped Recipe in a 3x3 crafting grid.
-         * The machine in which this recipe is crafted in is specified
-         * further down as the RecipeType.
-         */
-        ItemStack[] recipe = { new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD), null, new ItemStack(Material.DIAMOND), null, new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD) };
-
-        /*
-         * 4. Registering the Item
-         * Now you just have to register the item.
-         * RecipeType.ENHANCED_CRAFTING_TABLE refers to the machine in
-         * which this item is crafted in.
-         * Recipe Types from Slimefun itself will automatically add the recipe to that machine.
-         */
-        SlimefunItem item = new SlimefunItem(itemGroup, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
-        item.register(this);
+        sfItem.register(this);
     }
 
     @Override
