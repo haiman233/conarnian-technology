@@ -1,5 +1,6 @@
 package me.jnsbndgz.myfirstslimefunaddon;
 
+import me.jnsbndgz.myfirstslimefunaddon.machines.ElectricFlintRecycler;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -32,18 +33,29 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
         FieryAxe fieryAxe = new FieryAxe(itemGroup, FieryAxeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
 
         // Fire Cake
-        SlimefunItemStack FieryCakeItemStack = new SlimefunItemStack("FIRE_CAKE", Material.CAKE, "&cFire Cake",
+        SlimefunItemStack fieryCakeItemStack = new SlimefunItemStack("FIRE_CAKE", Material.CAKE, "&cFire Cake",
                 "", "&cTurns you on fire!");
-        ItemStack[] FieryCakeRecipe = {
+        ItemStack[] fieryCakeRecipe = {
                 new ItemStack(Material.DIAMOND),    null,                               new ItemStack(Material.DIAMOND),
                 null,                               SlimefunItems.CARBONADO,            null,
                 new ItemStack(Material.DIAMOND),    null,                               new ItemStack(Material.DIAMOND)
         };
-        FireCake fireCake = new FireCake(itemGroup, FieryCakeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, FieryCakeRecipe);
+        FireCake fireCake = new FireCake(itemGroup, fieryCakeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, fieryCakeRecipe);
+
+        // Electric Dust Recycler
+        SlimefunItemStack electricFlintRecyclerItemStack = new SlimefunItemStack("ELECTRIC_FLINT_RECYCLER", Material.FURNACE, "&eElectric Flint Recycler",
+                "", "&c Turns flint into cobblestone");
+        ItemStack[] electricFlintRecyclerRecipe = {
+                null,                               new ItemStack(Material.PISTON),    null,
+                new ItemStack(Material.PISTON),     new ItemStack(Material.FURNACE),   new ItemStack(Material.PISTON),
+                null,                               new ItemStack(Material.PISTON),    null
+        };
+        ElectricFlintRecycler eFlintRecycler = new ElectricFlintRecycler(itemGroup, electricFlintRecyclerItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, electricFlintRecyclerRecipe);
 
         // Registers
         fieryAxe.register(this);
         fireCake.register(this);
+        eFlintRecycler.register(this);
     }
 
     @Override
