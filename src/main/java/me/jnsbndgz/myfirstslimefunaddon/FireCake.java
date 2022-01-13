@@ -13,10 +13,7 @@ public class FireCake extends SlimefunItem {
 
     public FireCake(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
-    }
 
-    @Override
-    public void preRegister() {
         BlockUseHandler blockUseHandler = this::onBlockRightClick;
         addItemHandler(blockUseHandler);
 

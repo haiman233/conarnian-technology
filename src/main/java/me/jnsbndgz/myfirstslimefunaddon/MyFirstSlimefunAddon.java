@@ -29,6 +29,7 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
 
         ItemGroup itemGroup = new ItemGroup(categoryId, categoryItem);
 
+
         SlimefunItemStack FieryAxeItemStack = new SlimefunItemStack("FIERY_AXE", Material.STONE_AXE, "&4Fiery Axe",
                 "", "&cTurns your opponent", "&con fire!");
         ItemStack[] recipe = {
@@ -37,7 +38,7 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
                 null,                                   new ItemStack(Material.BLAZE_POWDER),   null
         };
 
-        SlimefunItem sfItem = new SlimefunItem(itemGroup, FieryAxeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+        FireCake sfItem = new FireCake(itemGroup, FieryAxeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
 
         SlimefunItemStack FieryCakeItemStack = new SlimefunItemStack("FIRE_CAKE", Material.CAKE, "&cFire Cake",
                 "", "&cTurns you on fire!");
