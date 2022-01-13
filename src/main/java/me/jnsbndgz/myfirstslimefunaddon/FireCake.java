@@ -15,19 +15,26 @@ public class FireCake extends SlimefunItem {
     public FireCake(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
-        BlockUseHandler blockUseHandler = this::onBlockRightClick;
-        addItemHandler(blockUseHandler);
-
-        ItemUseHandler itemUseHandler = this::onItemUseRightClick;
-        addItemHandler(itemUseHandler);
+        addItemHandler(onBlockRightClick());
+        addItemHandler(onItemUseRightClick());
     }
 
-    private void onBlockRightClick(PlayerRightClickEvent event) {
-        event.cancel();
-        event.getPlayer().setFireTicks(5 * 20);
+    private BlockUseHandler onBlockRightClick() {
+        return new BlockUseHandler() {
+            @Override
+            public void onRightClick(PlayerRightClickEvent event) {
+                event.cancel();
+                event.getPlayer().setFireTicks(5 * 20);
+            }
+        };
     }
 
-    private void onItemUseRightClick(PlayerRightClickEvent event) {
-        event.getPlayer().giveExpLevels(5);
+    private ItemUseHandler onItemUseRightClick() {
+        return new ItemUseHandler() {
+            @Override
+            public void onRightClick(PlayerRightClickEvent event) {
+                event.getPlayer().giveExpLevels(5);
+            }
+        };
     }
 }

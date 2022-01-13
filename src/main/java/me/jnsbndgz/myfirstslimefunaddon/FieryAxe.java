@@ -16,11 +16,15 @@ public class FieryAxe extends SlimefunItem {
     public FieryAxe(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
-        WeaponUseHandler weaponUseHandler = this::onHit;
-        addItemHandler(weaponUseHandler);
+        addItemHandler(onWeaponHit());
     }
 
-    private void onHit(EntityDamageByEntityEvent event, Player player, ItemStack itemStack) {
-        event.getEntity().setFireTicks(5 * 20);
+    private WeaponUseHandler onWeaponHit() {
+        return new WeaponUseHandler() {
+            @Override
+            public void onHit(EntityDamageByEntityEvent event, Player player, ItemStack itemStack) {
+                event.getEntity().setFireTicks(5 * 20);
+            }
+        };
     }
 }
