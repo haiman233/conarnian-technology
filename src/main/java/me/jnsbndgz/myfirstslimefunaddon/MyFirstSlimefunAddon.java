@@ -23,14 +23,14 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
         ItemGroup itemGroup = new ItemGroup(categoryId, categoryItem);
 
         // Fiery Axe
-        SlimefunItemStack FieryAxeItemStack = new SlimefunItemStack("FIERY_AXE", Material.STONE_AXE, "&4Fiery Axe",
+        SlimefunItemStack fieryAxeItemStack = new SlimefunItemStack("FIERY_AXE", Material.STONE_AXE, "&4Fiery Axe",
                 "", "&cTurns your opponent", "&con fire!");
         ItemStack[] recipe = {
                 null,                                   new ItemStack(Material.BLAZE_POWDER),   null,
                 new ItemStack(Material.BLAZE_POWDER),   new ItemStack(Material.STONE_AXE),      new ItemStack(Material.BLAZE_POWDER),
                 null,                                   new ItemStack(Material.BLAZE_POWDER),   null
         };
-        FieryAxe fieryAxe = new FieryAxe(itemGroup, FieryAxeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+        FieryAxe fieryAxe = new FieryAxe(itemGroup, fieryAxeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
 
         // Fire Cake
         SlimefunItemStack fieryCakeItemStack = new SlimefunItemStack("FIRE_CAKE", Material.CAKE, "&cFire Cake",
@@ -44,7 +44,7 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
 
         // Electric Dust Recycler
         SlimefunItemStack electricFlintRecyclerItemStack = new SlimefunItemStack("ELECTRIC_FLINT_RECYCLER", Material.FURNACE, "&eElectric Flint Recycler",
-                "", "&c Turns flint into cobblestone");
+                "", "&cTurns flint into cobblestone");
         ItemStack[] electricFlintRecyclerRecipe = {
                 null,                               new ItemStack(Material.PISTON),    null,
                 new ItemStack(Material.PISTON),     new ItemStack(Material.FURNACE),   new ItemStack(Material.PISTON),
