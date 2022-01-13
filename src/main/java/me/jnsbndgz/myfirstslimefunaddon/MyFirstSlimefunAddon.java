@@ -54,7 +54,7 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
     @Override
     public String getBugTrackerURL() {
         // You can return a link to your Bug Tracker instead of null here
-        return null;
+        return "https://github.com/jnsbndgz/my-first-slimefun-addon/issues";
     }
 
     @Override
