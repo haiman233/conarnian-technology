@@ -13,6 +13,8 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
+import javax.annotation.Nonnull;
+
 public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
 
     @Override
@@ -36,9 +38,9 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack fieryCakeItemStack = new SlimefunItemStack("FIRE_CAKE", Material.CAKE, "&cFire Cake",
                 "", "&cTurns you on fire!");
         ItemStack[] fieryCakeRecipe = {
-                new ItemStack(Material.DIAMOND),    null,                               new ItemStack(Material.DIAMOND),
-                null,                               SlimefunItems.CARBONADO,            null,
-                new ItemStack(Material.DIAMOND),    null,                               new ItemStack(Material.DIAMOND)
+                new ItemStack(Material.DIAMOND),    null,                       new ItemStack(Material.DIAMOND),
+                null,                               SlimefunItems.CARBONADO,    null,
+                new ItemStack(Material.DIAMOND),    null,                       new ItemStack(Material.DIAMOND)
         };
         FireCake fireCake = new FireCake(itemGroup, fieryCakeItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, fieryCakeRecipe);
 
@@ -46,9 +48,9 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack electricFlintRecyclerItemStack = new SlimefunItemStack("ELECTRIC_FLINT_RECYCLER", Material.FURNACE, "&eElectric Flint Recycler",
                 "", "&cTurns flint into cobblestone");
         ItemStack[] electricFlintRecyclerRecipe = {
-                null,                               new ItemStack(Material.PISTON),    null,
-                new ItemStack(Material.PISTON),     new ItemStack(Material.FURNACE),   new ItemStack(Material.PISTON),
-                null,                               new ItemStack(Material.PISTON),    null
+                null,                           new ItemStack(Material.PISTON),     null,
+                new ItemStack(Material.PISTON), new ItemStack(Material.FURNACE),    new ItemStack(Material.PISTON),
+                null,                           new ItemStack(Material.PISTON),     null
         };
         ElectricFlintRecycler eFlintRecycler = new ElectricFlintRecycler(itemGroup, electricFlintRecyclerItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, electricFlintRecyclerRecipe);
 
@@ -65,16 +67,12 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        // You can return a link to your Bug Tracker instead of null here
         return "https://github.com/jnsbndgz/my-first-slimefun-addon/issues";
     }
 
+    @Nonnull
     @Override
     public JavaPlugin getJavaPlugin() {
-        /*
-         * You will need to return a reference to your Plugin here.
-         * If you are using your main class for this, simply return "this".
-         */
         return this;
     }
 
