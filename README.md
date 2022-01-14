@@ -1,5 +1,5 @@
 # Conarnian Technology 
-***Technology from Conarnia***
+***Technology from Conarnia!***
 
 My first Slimefun4 addon.
 
