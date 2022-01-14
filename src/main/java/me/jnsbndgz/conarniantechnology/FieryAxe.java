@@ -1,4 +1,4 @@
-package me.jnsbndgz.myfirstslimefunaddon;
+package me.jnsbndgz.conarniantechnology;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -10,6 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import org.bukkit.inventory.ItemStack;
+
+import javax.annotation.Nonnull;
 
 public class FieryAxe extends SlimefunItem {
 

@@ -1,4 +1,4 @@
-package me.jnsbndgz.myfirstslimefunaddon;
+package me.jnsbndgz.conarniantechnology;
 
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;

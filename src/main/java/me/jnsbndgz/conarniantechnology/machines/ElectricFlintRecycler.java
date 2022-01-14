@@ -1,4 +1,4 @@
-package me.jnsbndgz.myfirstslimefunaddon.machines;
+package me.jnsbndgz.conarniantechnology.machines;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;

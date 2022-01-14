@@ -1,6 +1,5 @@
-package me.jnsbndgz.myfirstslimefunaddon;
+package me.jnsbndgz.conarniantechnology;
 
-import me.jnsbndgz.myfirstslimefunaddon.machines.ElectricFlintRecycler;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -13,14 +12,16 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
+import me.jnsbndgz.conarniantechnology.machines.ElectricFlintRecycler;
+
 import javax.annotation.Nonnull;
 
-public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
+public class ConarnianTechnology extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
-        NamespacedKey categoryId = new NamespacedKey(this, "barbarian_technology");
-        CustomItemStack categoryItem = new CustomItemStack(Material.WOODEN_AXE, "&4Barbarian Technology");
+        NamespacedKey categoryId = new NamespacedKey(this, "conarnian_technology");
+        CustomItemStack categoryItem = new CustomItemStack(Material.WOODEN_AXE, "&4Conarnian Technology");
 
         ItemGroup itemGroup = new ItemGroup(categoryId, categoryItem);
 
@@ -67,7 +68,7 @@ public class MyFirstSlimefunAddon extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/jnsbndgz/my-first-slimefun-addon/issues";
+        return "https://github.com/jnsbndgz/conarnian-technology/issues";
     }
 
     @Nonnull
